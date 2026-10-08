@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve - klinsheet</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      color: #333;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Color Variables */
+    :root {
+      --teal-bg: #007696;
+      --green-bg: #80c2a6;
+      --orange-btn: #f1683a;
+      --light-badge-bg: rgba(255, 255, 255, 0.2);
+      --badge-orange-bg: #fdeee9;
+      --badge-orange-text: #f1683a;
+    }
+
+    /* Bootstrap Navbar Customization */
+    .navbar-custom {
+      background-color: #ffffff;
+      padding: 15px 0;
+    }
+
+    .navbar-brand img {
+      max-height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-link-custom {
+      color: #333333 !important;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link-custom:hover,
+    .nav-link-custom.active {
+      color: var(--orange-btn) !important;
+    }
+      /* Glassmorphism Dropdown Menu Container */
+.dropdown-menu-glass {
+  background: 
+    linear-gradient(rgba(0, 118, 150, 0.82), rgba(0, 118, 150, 0.82)), 
+    url('images/blog\ pics.png') center/cover no-repeat !important;
+  
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 24px !important;
+  padding: 28px 24px !important; /* Slightly increased side padding */
+  
+  /* Forces container to expand automatically to fit long single-line text */
+  width: max-content !important;
+  min-width: 290px;
+  
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dropdown Menu Items - Straight single-line text */
+.dropdown-menu-glass .dropdown-item {
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  background: transparent !important;
+  
+  /* Key properties: Prevents text wrapping and keeps it straight on one line */
+  white-space: nowrap !important;
+  display: block;
+}
+
+/* Hover and Active Highlights */
+.dropdown-menu-glass .dropdown-item:hover,
+.dropdown-menu-glass .dropdown-item.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Desktop Hover Support */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu-glass {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+    /* Dropdown Customization */
+    .dropdown-menu-custom {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      padding: 10px 0;
+    }
+
+    .dropdown-menu-custom .dropdown-item {
+      font-size: 13.5px;
+      padding: 8px 20px;
+      color: #444;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-menu-custom .dropdown-item:hover,
+    .dropdown-menu-custom .dropdown-item.active {
+      background-color: var(--badge-orange-bg);
+      color: var(--orange-btn);
+      padding-left: 24px;
+    }
+
+    /* Desktop Hover Support for Dropdown */
+    @media (min-width: 992px) {
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Components */
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .badge-white {
+      background-color: var(--light-badge-bg);
+      color: #ffffff;
+    }
+
+    .badge-orange {
+      background-color: #fff !important;
+      color: var(--orange-btn);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-orange {
+      background-color: var(--orange-btn);
+      color: #ffffff;
+    }
+
+    .btn-orange:hover {
+      background-color: green;
+      color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--teal-bg);
+      color: #ffffff;
+      padding: 80px 8%;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      max-width: 520px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    /* Industries Main Container */
+    .industries-container {
+      padding: 80px 8%;
+      display: flex;
+      flex-direction: column;
+      gap: 90px;
+    }
+
+    /* Alternating Industry Row Block */
+    .industry-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .industry-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Image Wrapper with Green Backdrop Offset Accent */
+    .industry-image-wrapper {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-backdrop {
+      width: 100%;
+      max-width: 440px;
+      height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-backdrop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Green Backdrop Shadow Accents */
+    .industry-image-wrapper::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      max-width: 440px;
+      height: 380px;
+      background-color: var(--green-bg);
+      border-radius: 12px;
+      z-index: -1;
+    }
+
+    .industry-row:nth-child(odd) .industry-image-wrapper::before {
+      top: -20px;
+      left: -20px;
+    }
+
+    .industry-row:nth-child(even) .industry-image-wrapper::before {
+      top: -20px;
+      right: -20px;
+    }
+
+    /* Industry Content */
+    .industry-content {
+      flex: 1;
+    }
+
+    .industry-content h2 {
+      font-size: 26px;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .industry-content > p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .benefits-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .benefit-list li {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .benefit-list li::before {
+      content: "✓";
+      color: var(--teal-bg);
+      font-weight: bold;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: var(--teal-bg);
+      color: #ffffff;
+      padding: 60px 8% 20px 8%;
+    }
+
+    .newsletter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .newsletter-text h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .newsletter-text p {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .newsletter-form input {
+      padding: 10px 16px;
+      border-radius: 4px;
+      border: none;
+      width: 260px;
+      outline: none;
+    }
+
+    .social-wrapper {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .social-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: #f1683a;
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .social-box:hover {
+      color: #ffffff;
+      background-color: #d95328;
+      transform: translateY(-2px);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      opacity: 0.6;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 850px) {
+      .industry-row, .industry-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .industry-image-wrapper::before { display: none; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 32px; }
+      .newsletter-form input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BOOTSTRAP NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom border-bottom sticky-top">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/klinsheet logo 1.png" alt="klinsheet Logo">
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & Dropdown -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="About.html">About</a>
+          </li>
+
+          <!-- Services Dropdown -->
+           <li class="nav-item dropdown">
+  <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Service
+  </a>
+  <ul class="dropdown-menu dropdown-menu-glass" aria-labelledby="servicesDropdown">
+    <li><a class="dropdown-item" href="academic verification.html">Academic Verification</a></li>
+    <li><a class="dropdown-item" href="previous employer check.html">Previous Employee Check</a></li>
+    <li><a class="dropdown-item" href="guarantor check.html">Guarantor/ Reference Check</a></li>
+    <li><a class="dropdown-item" href="nysc verification.html">NYSC Verification</a></li>
+    <li><a class="dropdown-item" href="address confirmation.html">Address Confirmation</a></li>
+    <li><a class="dropdown-item" href="credit check.html">Credit Check</a></li>
+    <li><a class="dropdown-item " href="criminal ceck.html">Criminal Check</a></li>
+  </ul>
+</li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="insight.html">Insight</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="job-portal.html">Job Portal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact us.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Action Button -->
+        <a href="request background check.html" class="btn btn-orange ms-lg-3 mt-3 mt-lg-0">Request a Background Check</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <span class="badge badge-orange">INDUSTRIES WE SERVE</span>
+    <h1>Background Verification Built for Your Industry</h1>
+  </section>
+
+  <!-- Industries Main Container -->
+  <section class="industries-container">
+
+    <div class="industry-row">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/corporate-team.jpg" alt="Corporate Professionals">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">CORPORATE & ENTERPRISE</span>
+        <h2>Verify the people behind your organization.</h2>
+        <p>Support smarter recruitment and onboarding with comprehensive<br> checks on candidates across key levels.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Reduce hiring risks</li>
+          <li>Verify employment history</li>
+          <li>Confirm academic credentials</li>
+          <li>Streamline recruitment</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+    <div class="industry-row reverse">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/education-staff.jpg" alt="Education Professional">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">EDUCATION</span>
+        <h2>Protect your institution with trusted verification.</h2>
+        <p>Support admissions, employment, and credential verification with<br> reliable academic and identity verification services.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Confirm applicant information</li>
+          <li>Reduce academic fraud</li>
+          <li>Support institutional trust</li>
+          <li>Reduce administrative burden</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+    <div class="industry-row">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/healthcare-worker.jpg" alt="Healthcare Professional">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">HEALTHCARE</span>
+        <h2>Verify professionals who care for others.</h2>
+        <p>Help healthcare organizations validate the credentials, employment<br> history, and background of staff and professionals.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Reduce operational risk</li>
+          <li>Strengthen patient trust</li>
+          <li>Support safer recruitment</li>
+          <li>Verify professional qualifications</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+    <div class="industry-row reverse">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/real-estate-engineer.jpg" alt="Real Estate Professional">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">REAL ESTATE & PROPERTY</span>
+        <h2>Know who you're trusting with your property.</h2>
+        <p>Help property managers, landlords, and real estate organizations make<br> informed decisions when screening tenants, agents, and other stakeholders.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Confirm identity and address</li>
+          <li>Support tenant screening</li>
+          <li>Verify guarantors</li>
+          <li>Reduce property-related risk</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+    <div class="industry-row">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/tech-laptop.jpg" alt="Technology Workplace">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">TECHNOLOGY</span>
+        <h2>Verify professionals who care for others.</h2>
+        <p>Help tech companies validate credentials, employment<br> history, and background of engineering staff and contractors.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Reduce operational risk</li>
+          <li>Strengthen patient trust</li>
+          <li>Support safer recruitment</li>
+          <li>Verify professional qualifications</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+    <div class="industry-row reverse">
+      <div class="industry-image-wrapper">
+        <div class="image-backdrop">
+          <img src="images/hospitality-staff.jpg" alt="Hospitality Staff">
+        </div>
+      </div>
+      <div class="industry-content">
+        <span class="badge badge-orange">HOSPITALITY & RETAIL</span>
+        <h2>Support responsible hiring and workforce management.</h2>
+        <p>Provide organizations with structured verification services that support<br> recruitment, compliance, and accountability.</p>
+
+        <div class="benefits-title">Benefits</div>
+        <ul class="benefit-list">
+          <li>Establish credibility</li>
+          <li>Employment checks</li>
+          <li>Improve accountability</li>
+          <li>Secure documentation</li>
+        </ul>
+
+        <button class="btn btn-orange">Request a Background Check</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="newsletter">
+      <div class="newsletter-text">
+        <h3>Subscribe to our newsletter</h3>
+        <p>Join our newsletter to stay up to date on feature and releases.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="youremail@gmail.com">
+        <button class="btn btn-orange">Join</button>
+      </form>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom: 12px;"><img src="images/klinsheet logo 1.png" alt="Hinsheet Logo"></div>
+        <p style="font-size: 12px; opacity: 0.8; max-width: 280px;">We deliver exceptional value to our clients in the area of Background Check services, Recruitment, Training, Business Advisory and Outsourcing.</p>
+        <div class="social-wrapper">
+          <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Academic</li>
+          <li>NYSC</li>
+          <li>Guarantor</li>
+          <li>Address</li>
+          <li>Credit</li>
+          <li>Criminal</li>
+          <li>Previous Employee</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quicklinks</h4>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Service</li>
+          <li>Background Check</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li>Terms of Use</li>
+          <li>Privacy Policy</li>
+          <li>Manage Cookies</li>
+          <li>Careers</li>
+          <li>Whatsapp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 klinsheet Consulting Ltd. All rights reserved.</p>
+      <p>51 Okota Rd, Inside abbey microfinance bank.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

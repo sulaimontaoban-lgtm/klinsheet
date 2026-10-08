@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>klinsheet - Dependable Background Check Website for Smart Hiring</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap 5.3 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="hero.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Reset layout defaults */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    .main-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px 0;
+      display: inline-block;
+    }
+
+    /* 1. CRITICAL: Ensures menu aligns to this container */
+    .main-nav li.dropdown {
+      position: relative;
+    }
+
+    /* 2. Hidden menu state */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      list-style: none;
+      padding: 10px 0;
+      border-radius: 4px;
+      z-index: 9999;
+    }
+
+    .dropdown-menu li {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f5f5f5;
+      color: #ff6600;
+    }
+
+    /* 3. CRITICAL: Reveal state on hovering the parent container */
+    .main-nav li.dropdown:hover > .dropdown-menu {
+      display: block !important;
+    }
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      color: #333;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Color Variables */
+    :root {
+      --teal-bg: #007696;
+      --teal-light: #e8f3f6;
+      --green-bg: #80c2a6;
+      --green-light: #edf6f2;
+      --orange-btn: #f1683a;
+      --light-badge-bg: rgba(255, 255, 255, 0.2);
+      --badge-orange-bg: #fdeee9;
+      --badge-orange-text: #f1683a;
+      --card-white: #ffffff;
+    }
+
+    /* Components */
+    .badge-orange{
+      background-color: #D6E9EF80;
+      color: black;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .badge-white {
+      background-color: var(--light-badge-bg);
+      color: #ffffff;
+    }
+    .badge-teal {
+      background-color: var(--teal-light);
+      color: var(--teal-bg);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .btn-orange {
+      background-color: var(--orange-btn);
+      color: #ffffff;
+    }
+
+    .btn-orange:hover {
+      background-color: green;
+     
+    }
+      .btns {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btns-orange {
+      background-color: var(--orange-btn);
+      color: #ffffff;
+    }
+
+      .btns-orange:hover {
+      background-color: green;
+     
+    }
+
+    /* .section-padding {
+      padding: 80px 8%;
+    } */
+
+    /* Header */
+    header {
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5%;
+      background-color: #ffffff;
+    }
+
+    .logo img {
+      max-height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-home {
+      background: linear-gradient(180deg, #ffffff 0%, #007696 100%);
+      text-align: center;
+      padding: 60px 8% 0 8%;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-home h1 {
+      font-size: 42px;
+      max-width: 680px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 24px;
+    }
+
+    .hero-img-wrapper {
+      max-width: 480px;
+      margin-top: 20px;
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section: About Intro */
+    .about-intro {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      background-color: #fff;
+    }
+
+    .about-intro-img {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-intro-img img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .about-intro-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-intro-text h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .about-intro-text p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    /* Section: Services Grid */
+    .services-section {
+      background-color:#fff;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      text-align: left;
+    }
+
+    .service-list.right { text-align: left; }
+
+    .service-item h4 {
+      font-size: 15px;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .service-item p{
+      display: flex;
+      text-align: left;
+    }
+    .service-item p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .service-center-img img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 8px;
+    }
+
+
+
+/* Store Buttons Alignment */
+.store-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Reusable Store Badge Base */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  height: 58px;
+  min-width: 195px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Badge (Google Play) */
+.store-badge-light {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* Dark Badge (Scan Android) */
+.store-badge-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.store-badge i {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.store-badge .badge-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.store-badge .small-text {
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  opacity: 0.8;
+}
+
+.store-badge strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Right Side Phone Image Container */
+.download-app-phones {
+  position: relative;
+  z-index: 2;
+  margin-right: -30px; /* Pulls phone image slightly to the right */
+}
+
+.phones-img {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Overflows top and bottom container boundaries slightly for 3D effect */
+  margin-top: -30px; 
+  margin-bottom: -30px;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.25));
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 991px) {
+  .download-app-card {
+    flex-direction: column;
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .download-app-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .download-title {
+    font-size: 36px;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+
+  .download-app-phones {
+    margin-right: 0;
+  }
+
+  .phones-img {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .store-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .store-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+    /* How It Works Section */
+    .how-it-works {
+      background-color: var(--green-light);
+    }
+
+    .how-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .how-screen {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .how-screen img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .how-steps {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-box {
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--teal-bg);
+    }
+
+    .step-box h4 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .step-box p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    HR Solutions Section
+    .hr-solutions h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .hr-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .hr-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background: #fff;
+    }
+
+    .hr-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .hr-card-body {
+      padding: 20px;
+    }
+
+    .hr-card-body h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hr-card-body p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    /* =============================================================
+       STATS SECTION STYLING (FIXED & MATCHED TO TARGET DESIGN)
+       ============================================================= */
+    .stats-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      /* Glowing green radial overlays combined with green gradient and laptop background image */
+      background:
+        url('./images/Group 33382.png') center/cover no-repeat;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-box {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .stat-number {
+      color: #000000;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      line-height: 1;
+    }
+
+    .stat-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #f0f0f0;
+      margin: 20px 0 16px 0;
+    }
+
+    .stat-label {
+      color: #111111;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+
+   /* =============================================================
+   TESTIMONIALS
+   ============================================================= */
+/* Section Badge */
+.section-badge {
+  background-color: #e2f0e8;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  color: #111;
+  font-size: 2.25rem;
+}
+
+/* Card Container & Layout */
+.testimonial-card-wrapper {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.testimonial-card {
+  background-color: #f1f5ee; /* Soft Figma light green */
+  border-radius: 20px;
+  padding: 35px 30px 45px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Quote Icon Styling */
+.quote-icon {
+  color: #f07444; /* Figma orange */
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  color: #555555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Stars */
+.stars {
+  color: #f07444;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 4px;
+}
+
+/* Profile Info Block (Positioned Bottom-Left Cutout) */
+.testimonial-author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 8px 20px 8px 8px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.author-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  display: block;
+  font-size: 0.9rem;
+  color: #111;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.author-time {
+  display: block;
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+/* Carousel Indicator Bar */
+.carousel-indicator {
+  width: 40px;
+  height: 5px;
+  background-color: #f07444;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+  /* Section Background */
+.industries-section {
+  background-color: #f8faf9;
+  padding: 60px 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Badge Header */
+.section-badge {
+  display: inline-block;
+  background-color: #e2ede5;
+  color: #222222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #111111;
+  font-size: 32px;
+  font-weight: 800;
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+/* Curved Container Setup */
+.curved-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* White Oval Masks (Creates the fisheye/curved lens effect) */
+.curve-mask {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 90px;
+  background-color: #f8faf9; /* Match background color */
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.top-mask {
+  top: -45px;
+}
+
+.bottom-mask {
+  bottom: -45px;
+}
+
+/* Industry Track Grid */
+.industries-track {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Individual Image Card */
+.industry-item {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.industry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay Pill Badges */
+.industry-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(36, 123, 160, 0.75); /* Semi-transparent Teal */
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Button */
+.btn-read-more {
+  display: inline-block;
+  background-color: #f1683a; /* Orange accent */
+  color: #ffffff;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-read-more:hover {
+  background-color: #d95326;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .industries-track {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+  }
+  
+  .industry-item {
+    flex: 0 0 220px;
+  }
+  
+  .curve-mask {
+    display: none; /* Hide curve on mobile for better scroll performance */
+  }
+}
+/* =========================================
+   INDUSTRIES SECTION
+========================================= */
+.industries-section {
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    /* padding: 30px 0 20px; */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* =========================================
+   SMALL LABEL & TITLE
+========================================= */
+.section-tag {
+    display: inline-block;
+    background: #e8eef1;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #4a5568;
+    margin-bottom: 12px;
+}
+
+.industries-section h2 {
+    margin: 0 0 25px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.3;
+}
+
+/* =========================================
+   CAROUSEL WINDOW & FISHEYE MASK
+========================================= */
+.industry-carousel {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Applies SVG curved mask */
+    clip-path: url(#fisheye-clip);
+    -webkit-clip-path: url(#fisheye-clip);
+}
+
+/* =========================================
+   MOVING TRACK
+========================================= */
+.industry-track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    height: 100%;
+    animation: industrySlide 22s linear infinite;
+}
+
+.industry-carousel:hover .industry-track {
+    animation-play-state: paused;
+}
+
+@keyframes industrySlide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translates exact width of 1 complete set (6 cards + gaps) */
+        transform: translateX(calc(-50% - 6px));
+    }
+}
+
+/* =========================================
+   IMAGE CARDS
+========================================= */
+.industry-card {
+    position: relative;
+    width: 180px;
+    height: 100%;
+    flex: 0 0 180px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.industry-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+.industry-card span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    background: rgba(25, 125, 150, 0.85);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   READ MORE BUTTON
+========================================= */
+.read-more {
+    position: relative;
+    z-index: 20;
+    margin-top: 15px;
+    border: none;
+    background: #ff7043;
+    color: white;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.read-more:hover {
+    background: #f45d30;
+}
+/* =========================================
+   CAROUSEL CONCAVE MASK
+========================================= */
+.industry-carousel {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Increased height to allow full vertical range */
+    margin: 10px auto;
+    overflow: hidden;
+    
+    /* Applies the center-dipping concave curve */
+    clip-path: url(#fisheye-clip);
+    -webkit-clip-path: url(#fisheye-clip);
+}
+
+.industry-track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    height: 100%;
+    animation: industrySlide 22s linear infinite;
+}
+
+.industry-card {
+    position: relative;
+    width: 180px;
+    height: 100%;
+    flex: 0 0 180px;
+    overflow: hidden;
+}
+
+.industry-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+    /* Partners Section */
+.partners-section {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.partners-badge {
+  display: inline-block;
+  background-color: #e2ede5;
+  color: #222222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Wrapper and Responsive Item Grid */
+.partners-logos-wrapper {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.partner-img {
+  max-width: 120px; /* Constrains logo size on desktop */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Screen Size Adjustments */
+@media (max-width: 768px) {
+  .partner-item {
+    flex: 0 1 calc(33.333% - 1.5rem); /* Displays 3 logos per row on mobile screens */
+  }
+  
+  .partner-img {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-item {
+    flex: 0 1 calc(50% - 1rem); /* Displays 2 logos per row on smaller mobile devices */
+  }
+}
+/* =========================================================
+   INSIGHT / BLOG SECTION
+========================================================= */
+.insight-section {
+  background-color: #ffffff;
+}
+
+/* Eyebrow / Section Badge */
+.section-eyebrow {
+  display: inline-block;
+  background-color: #e2ede5;
+  color: #222222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Section Title */
+.section-title {
+  color: #111111;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Card Container */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image Wrapper */
+.blog-img-wrap {
+  width: 100%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Subtle image zoom on hover */
+.blog-card:hover .blog-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* Metadata (Comment icon & Author) */
+.blog-meta {
+  font-size: 0.8rem;
+  color: #777777;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.blog-meta i {
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+/* Post Title */
+.blog-card h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* Post Description */
+.blog-card p {
+  font-size: 0.88rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1; /* Pushes the 'Read more' link to the bottom evenly */
+}
+
+/* Read More Link */
+.read-more-link {
+  color: #f1683a; /* Accent Orange */
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.read-more-link:hover {
+  color: #d95326;
+  transform: translateX(3px);
+}
+    /* Client Logos Bar */
+    .logos-bar {
+      padding: 30px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.6;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logos-bar img {
+      max-height: 28px;
+      filter: grayscale(100%);
+    }
+
+/* Footer Base Background & Colors */
+.site-footer {
+  background-color: #0b7b99; /* Exact teal color from image */
+  color: #ffffff;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+}
+
+/* Horizontal Dividers */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+/* Newsletter Styles */
+.newsletter-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.newsletter-input {
+  max-width: 380px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.newsletter-input::placeholder {
+  color: #b0b0b0;
+}
+
+.btn-newsletter {
+  background-color: #f26522; /* Brand orange color */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 1.75rem;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-newsletter:hover {
+  background-color: #d95316;
+  color: #ffffff;
+}
+
+/* Logo & Content */
+.footer-logo {
+  max-height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Social Icon Boxes */
+.social-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f26522;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.social-box:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Link Columns */
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+}
+
+    /* DOWNLOAD APP SECTION */
+    .download-app-section {
+      padding: 60px 8%;
+    }
+
+    .download-app-card {
+      background: var(--green-bg, #80c2a6);
+      border-radius: 24px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px;
+      min-height: 380px;
+      overflow: visible;
+    }
+
+    .download-app-content {
+      max-width: 520px;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .download-title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .download-text {
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.95;
+      margin-bottom: 32px;
+    }
+
+    /* Store Buttons */
+    .store-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .store-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    .store-badge-light {
+      background-color: #ffffff;
+      color: #111111;
+    }
+
+    .store-badge-light i {
+      font-size: 26px;
+      color: #007696;
+    }
+
+    .store-badge-dark {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .store-badge-dark i {
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .badge-text .small-text {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+
+    .badge-text strong {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Overlapping Phones Positioning */
+    .download-app-phones {
+      position: absolute;
+      right: 40px;
+      bottom: -20px;
+      top: -40px;
+      width: 450px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .phones-img {
+      height: 118%;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Mobile & Tablet Responsiveness */
+    @media (max-width: 991px) {
+      .download-app-card {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .download-app-content {
+        max-width: 100%;
+      }
+
+      .download-title {
+        font-size: 32px;
+      }
+
+      .store-buttons {
+        justify-content: center;
+      }
+
+      .download-app-phones {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 320px;
+        margin-top: 30px;
+      }
+
+      .phones-img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 850px) {
+      nav { display: none; }
+      .services-layout { grid-template-columns: 1fr; }
+      .app-cta { flex-direction: column; text-align: center; gap: 20px; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .hero-home h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">
+        <img src="images/klinsheet logo 1.png" alt="Klinsheet Logo" class="logo-img">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item dropdown">
+  <a class="nav-link nav-link-custom dropdown-toggle " href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Service
+  </a>
+  <ul class="dropdown-menu dropdown-menu-glass" aria-labelledby="servicesDropdown">
+    <li><a class="dropdown-item" href="academic verification.html">Academic Verification</a></li>
+    <li><a class="dropdown-item" href="previous employer check.html">Previous Employee Check</a></li>
+    <li><a class="dropdown-item" href="guarantor check.html">Guarantor/ Reference Check</a></li>
+    <li><a class="dropdown-item" href="nysc verification.html">NYSC Verification</a></li>
+    <li><a class="dropdown-item" href="address confirmation.html">Address Confirmation</a></li>
+    <li><a class="dropdown-item" href="credit check.html">Credit Check</a></li>
+    <li><a class="dropdown-item active" href="criminal check.html">Criminal Check</a></li>
+  </ul>
+</li>
+          <li class="nav-item"><a class="nav-link" href="#insight">Insight</a></li>
+          <li class="nav-item"><a class="nav-link" href="#jobs">Job Portal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="request background check.html" class="btn btn-cta px-4 py-2 fw-bold text-white d-block d-lg-inline-block text-center mt-3 mt-lg-0 btn-orange">Request a Background Check</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+<section id="home" class="hero-section text-center">
+  <div class="container position-relative z-2">
+    <h1 class="hero-title">Dependable Background Check<br class="d-none d-sm-inline"> Website For Smart Hiring.</h1>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-person-wrapper">
+      <div class="hero-img-container">
+        <img src="images/lady-with-phone.png" alt="Klinsheet background check professional" class="hero-person">
+      </div>
+
+      <!-- Badges overlapping the lower portion of the image -->
+      <div class="hero-store-badges">
+        <a href="#" class="store-badge badge-light">
+          <!-- Google Play Icon SVG -->
+          <img src="images/123 (2).png" alt="" class="img1">
+          <span class="badge-text">
+            <small>Download on</small>
+            <strong>Google Play</strong>
+          </span>
+        </a>
+
+        <a href="#" class="store-badge badge-dark">
+          <!-- QR Code Icon SVG -->
+          <img src="images/123 (1).png" class="img1" alt="">
+          <span class="badge-text">
+            <small>Scan on</small>
+            <strong>Android Device</strong>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="section-padding container-fluid about-intro m-0 p-0 py-5 my-5">
+    <div class="about-intro-img">
+      <img src="images/Group 33368.png" alt="Mobile App Screen">
+    </div>
+    <div class="about-intro-text">
+      <span class="badge badge-orange">WHAT WE DO</span>
+      <h2>Delivering Trusted Background Verification Services.</h2>
+      <p>We help businesses, organizations, and individuals verify the information that matters most. Our comprehensive background screening services include identity, employment, education, criminal record, address, guarantor, and reference verification. With accurate results, fast turnaround times, and strict confidentiality, we empower our clients to make informed decisions, reduce risk, and build trustworthy relationships with confidence.</p>
+      <button class="btns btn-orange">Learn More</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+     OUR SERVICES
+========================================================= "
+-->
+<section id="services" class="services-section py-5 py-lg-6">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">OUR SERVICES</span>
+      <h2 class="section-title mt-3">Secure, Fast, and Affordable<br>Verification Services</h2>
+    </div>
+
+    <div class="row align-items-center g-4">
+      <!-- Left column -->
+      <div class="col-lg-4 order-2 order-lg-1">
+        <div class="service-item mb-4">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt="">ACADEMIC VERIFICATION</h6>
+          <p>Verify educational qualifications, certificates, and institution attendance to ensure every academic credential is authentic.</p>
+        </div>
+        <div class="service-item mb-4">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt="">NYSC VERIFICATION</h6>
+          <p>Confirm the authenticity of NYSC certificates and<br> service records for accurate employment screening.</p>
+        </div>
+        <div class="service-item mb-4">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt=""> GUARANTOR CHECK</h6>
+          <p>Validate guarantor identity, contact details, and credibility to reduce risk and strengthen accountability.</p>
+        </div>
+        <div class="service-item">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt="">ADDRESS CONFIRMATION</h6>
+          <p>Validate guarantor identity, contact details, and credibility to reduce risk and strengthen accountability.</p>
+        </div>
+      </div>
+
+      <!-- Middle laptop image -->
+            <div class="col-lg-4 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+            <div class="laptop-mockup">
+                <img src="images/laptop_service_view-removebg-preview 1.png" alt="Dashboard Preview" class="img-fluid">
+            </div>
+            </div>
+      <!-- Right column -->
+      <div class="col-lg-4 order-3">
+        <div class="service-item mb-4">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt="">PREVIOUS EMPLOYEE CHECK</h6>
+          <p>Verify employment history, job title, dates of employment, and professional conduct with former employers.</p>
+        </div>
+        <div class="service-item mb-4">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt=""> CHECK</h6>
+          <p>Conduct thorough criminal record screening to help organizations make safer and more informed hiring decisions.</p>
+        </div>
+        <div class="service-item">
+          <h6><img src="images/klinsheet logo 1 (1).png" alt="">CREDIT CHECK</h6>
+          <p>Assess an individual's credit history and financial reliability to support informed decisions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Download Our App Section -->
+<section class="download-app-section py-5 my-5">
+  <div class="container">
+    <div class="download-app-card">
+      
+      <!-- Left Content -->
+      <div class="download-app-content">
+        <h2 class="download-title">Download<br>our App now</h2>
+        <p class="download-text">
+          Whether you're an employer, recruiter, or individual, the Klinsheet app makes
+          background screening faster and more convenient. Manage verification
+          requests, stay informed with instant notifications, and access your reports
+          anytime, anywhere.
+        </p>
+        
+        <!-- App Store Badges -->
+        <div class="store-buttons">
+          <a href="#" class="store-badge store-badge-light">
+            <i class="bi bi-google-play"></i>
+            <div class="badge-text">
+              <span class="small-text">Download on</span>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+          
+          <a href="#" class="store-badge store-badge-dark">
+            <i class="bi bi-qr-code"></i>
+            <div class="badge-text">
+              <span class="small-text">Scan on</span>
+              <strong>Android Device</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Phone Preview Image -->
+      <div class="download-app-phones">
+        <img src="images/Group 7.png" alt="Klinsheet Mobile App Screens" class="phones-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+<section class="how-it-works-section py-5 py-lg-6">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">HOW IT WORKS</span>
+      <h2 class="section-title mt-3">A simple, secure, and transparent process<br>for getting reliable background checks.</h2>
+    </div>
+
+    <div class="row align-items-center g-5">
+      <!-- Left Column: Image Fader Frame -->
+      <div class="col-lg-6">
+        <div class="step-image-frame">
+          <img src="images/Academic.png" alt="Step 1: Submit Request" class="step-img step-img-1 img-fluid">
+          <img src="images/verify information .png" alt="Step 2: Verification" class="step-img step-img-2 img-fluid">
+          <img src="images/submit.png" alt="Step 2: Verification" class="step-img step-img-2 img-fluid">
+          <img src="images/Track.png" alt="Step 3: Track & Receive Report" class="step-img step-img-3 img-fluid">
+        </div>
+      </div>
+
+      <!-- Right Column: Process Steps -->
+      <div class="col-lg-6">
+        <div class="how-step">
+          <h5>Submit Your Request</h5>
+          <p>Choose the background check service you need and provide the required applicant information and documents through our secure platform.</p>
+        </div>
+        <div class="how-step">
+          <h5>We Verify the Information</h5>
+          <p>Our verification team carefully reviews and validates the submitted information through relevant and authorized sources.</p>
+        </div>
+        <div class="how-step">
+          <h5>Track the Verification</h5>
+          <p>Stay informed as your request progresses. Receive updates on the status of your background check throughout the process.</p>
+        </div>
+        <div class="how-step">
+          <h5>Receive Your Report</h5>
+          <p>Once verification is completed, receive a clear and comprehensive background check report securely and conveniently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- HR SOLUTIONS -->
+<section class="container section-padding hr-solutions-section py-5">
+  <div class="mb-5">
+  <span class="badge badge-orange">HR SOLUTIONS</span>
+  <h1>Comprehensive HR Solutions for<br> a Stronger Workforce</h1>
+  </div>
+  <div class="hr-cards">
+    
+    <div class="hr-card">
+      <div class="hr-card-img-wrap">
+        <img src="images/training.png" alt="Training & Development" class="hr-card-img">
+      </div>
+      <div class="hr-card-body">
+        <h3>Training &amp; Development</h3>
+        <p>Equip your workforce with the knowledge and skills needed to improve performance, enhance productivity, and support career development.</p>
+        <a href="#" style="color: var(--orange-btn); font-size: 12px; font-weight: 600;"><button class="btn btn-orange btn-cards">Learn more</button></a>
+      </div>
+    </div>
+
+    <div class="hr-card">
+      <div class="hr-card-img-wrap">
+        <img src="images/hr sevices.png" alt="Recruitment &amp; Outsourcing" class="hr-card-img">
+      </div>
+      <div class="hr-card-body">
+        <h3>HR Outsourcing &amp; Compliance</h3>
+        <p>Simplify your HR operations by outsourcing recruitment, onboarding, employee administration, and workforce management to professionals.</p>
+        <a href="#" style="color: var(--orange-btn); font-size: 12px; font-weight: 600;"><button class="btn btn-orange btn-cards">Learn more</button></a>
+      </div>
+    </div>
+
+    <div class="hr-card">
+      <div class="hr-card-img-wrap">
+        <img src="images/419 1.png" alt="Business Advisory" class="hr-card-img">
+      </div>
+      <div class="hr-card-body">
+        <h3>Payroll Management</h3>
+        <p>Ensure accurate and timely salary processing, statutory deductions, and payroll reporting while maintaining compliance with regulations.</p>
+        <a href="#" style="color: var(--orange-btn); font-size: 12px; font-weight: 600;"><button class="btn btn-orange btn-cards">Learn more</button></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- PROVEN RESULTS / STATS SECTION -->
+  <section class="container stats-section section-padding my-5" style="padding-top: 0;">
+    <div class="stats-card p-4 p-md-5">
+      <div class="row align-items-center g-4" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; padding: 40px;">
+        <div class="col-lg-5" style="flex: 1; min-width: 280px; color: #fff;">
+          <h2 class="text-white fw-bold display-6 mb-3" style="font-size: 36px; line-height: 1.2; margin-bottom: 16px;">Proven Result,<br>Better Outcomes...</h2>
+          <p class="text-white-50 mb-0 leading-relaxed" style="font-size: 14px; opacity: 0.85;">
+            Our growing network of clients relies on Klinsheet for fast, accurate, and affordable background verification services that support safer hiring and smarter decisions.
+          </p>
+        </div>
+
+        <div class="col-lg-7" style="flex: 1.2; min-width: 300px;">
+          <div class="stat-stat" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="stat-box">
+              <h3 class="stat-number">28+</h3>
+              <div class="stat-divider"></div>
+              <span class="stat-label">Partners</span>
+            </div>
+            <div class="stat-box">
+              <h3 class="stat-number">120+</h3>
+              <div class="stat-divider"></div>
+              <span class="stat-label">Project Completed</span>
+            </div>
+            <div class="stat-box">
+              <h3 class="stat-number">30+</h3>
+              <div class="stat-divider"></div>
+              <span class="stat-label">Request of Investment</span>
+            </div>
+            <div class="stat-box">
+              <h3 class="stat-number">32+</h3>
+              <div class="stat-divider"></div>
+              <span class="stat-label">Nationwide Coverage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- =========================================================
+     FAQ
+========================================================= -->
+<section class="faq-section py-5 py-lg-6">
+  <div class="container py-4">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <span class="section-eyebrow section-eyebrow--light">QUESTIONS &amp; ANSWER</span>
+        <h2 class="section-title mt-3">Clear Answers For Clear Operations</h2>
+
+        <div class="faq-contact-card mt-5">
+          <h5>Still have a question?</h5>
+          <p>Needs clarity before moving forward, Speak with our operational team and get direct answer tailored to your business challenge.</p>
+          <a href="#contact" class="btn btn-brand-orange rounded-pill px-4">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                What is a background check?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                A background check is a verification process used to confirm an individual's identity, employment history, academic qualifications, criminal records, guarantor information, and other relevant details.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                What types of background checks does Klinsheet provide?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We provide academic verification, NYSC verification, guarantor checks, address confirmation, previous employee checks, criminal checks, and credit checks.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Is my information safe with Klinsheet?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes. We apply strict confidentiality and data protection practices to ensure every piece of information you share stays secure.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                How long does a background check take?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Turnaround time depends on the type of check requested, but most verifications are completed within a few business days.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Who can use Klinsheet's background check services?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Our services are built for employers, recruiters, organizations, and individuals who need dependable identity and background verification.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+<section class="testimonial-section py-5 py-lg-6">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-badge">TESTIMONIAL</span>
+      <h2 class="section-title fw-bold mt-3">Trust with Confidence</h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card-wrapper">
+          <div class="testimonial-card">
+            <div class="quote-icon"><i class="bi bi-quote"></i></div>
+            <p class="testimonial-text">"Klinsheet has made our employee verification process faster and more reliable. Their reports are clear, accurate, and delivered within the expected timeframe."</p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/Ellipse 1 (2).png" alt="Tessie" class="author-img">
+            <div>
+              <strong class="author-name">Tessie (Manager)</strong>
+              <small class="author-time">1 month ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card-wrapper">
+          <div class="testimonial-card">
+            <div class="quote-icon"><i class="bi bi-quote"></i></div>
+            <p class="testimonial-text">"We needed a background screening partner we could trust, and Klinsheet has delivered consistently. Their process is simple, professional, and affordable."</p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/Ellipse 1 (1).png" alt="Janet" class="author-img">
+            <div>
+              <strong class="author-name">Janet (HR)</strong>
+              <small class="author-time">1 month ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card-wrapper">
+          <div class="testimonial-card">
+            <div class="quote-icon"><i class="bi bi-quote"></i></div>
+            <p class="testimonial-text">"The Klinsheet team made verification incredibly easy for us. Their customer support was responsive, and we always knew the status of our requests."</p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/Ellipse 1.png" alt="Joseph" class="author-img">
+            <div>
+              <strong class="author-name">Joseph (Engineer)</strong>
+              <small class="author-time">1 week ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Indicator -->
+    <div class="text-center mt-5">
+      <div class="carousel-indicator"></div>
+    </div>
+  </div>
+</section>
+
+<section class="industries-section">
+    <div class="section-tag">
+        INDUSTRIES WE SERVE
+    </div>
+
+    <h2>
+        Serving Diverse Industries with Confidence.
+    </h2>
+
+   <!-- SVG Concave/Fisheye Mask Definition -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <clipPath id="fisheye-clip" clipPathUnits="objectBoundingBox">
+      <!-- Curves inward towards the vertical middle -->
+      <path d="M 0,0 Q 0.5,0.2 1,0 L 1,1 Q 0.5,0.8 0,1 Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+    <div class="industry-carousel">
+        <div class="industry-track">
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52.png" alt="Corporate Organization">
+                <span>Corporate Organization</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (1).png" alt="Healthcare">
+                <span>Healthcare</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (5).png" alt="Education">
+                <span>Education</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (2).png" alt="Government">
+                <span>Government</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (3).png" alt="Technology">
+                <span>Technology</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (4).png" alt="Real Estate">
+                <span>Real Estate</span>
+            </div>
+
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52.png" alt="Corporate Organization">
+                <span>Corporate Organization</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (1).png" alt="Healthcare">
+                <span>Healthcare</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (5).png" alt="Education">
+                <span>Education</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (2).png" alt="Government">
+                <span>Government</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (3).png" alt="Technology">
+                <span>Technology</span>
+            </div>
+
+            <div class="industry-card">
+                <img src="images/Rectangle 52 (4).png" alt="Real Estate">
+                <span>Real Estate</span>
+            </div>
+
+        </div>
+    </div>
+
+    <button class="read-more">
+        Read more
+    </button>
+
+</section>
+
+<!-- =========================================================
+     INSIGHT / BLOG
+========================================================= -->
+<section id="insight" class="insight-section py-5 py-lg-6">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">INSIGHT</span>
+      <h2 class="section-title mt-3">Smarter Hiring &amp; Workforce<br> Decisions</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/blog pics.png" alt="5 Things Every Employer Should Verify Before Hiring" class="blog-img">
+          </div>
+          <div class="blog-meta"><i class="bi bi-chat-left-text"></i> Leave a comment &nbsp; <i class="bi bi-person"></i> Dipo Umoru</div>
+          <h5>5 Things Every Employer Should Verify Before Hiring.</h5>
+          <p>From identity and employment history to academic qualifications and references, discover the key information employers should check before making a hiring decision.</p>
+          <a href="#" class="read-more-link">Read more &gt;&gt;</a>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/blog pics (1).png" alt="Academic Verification: Why It Matters in Recruitment" class="blog-img">
+          </div>
+          <div class="blog-meta"><i class="bi bi-chat-left-text"></i> Leave a comment &nbsp; <i class="bi bi-person"></i> Kemi Ajose</div>
+          <h5>Academic Verification: Why It Matters in Recruitment.</h5>
+          <p>Discover why verifying educational qualifications is important and how academic checks can help organizations identify inaccurate or misleading credentials.</p>
+          <a href="#" class="read-more-link">Read more &gt;&gt;</a>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="images/419 1 (1).png" alt="Employment Verification: What Employers Should Know" class="blog-img">
+          </div>
+          <div class="blog-meta"><i class="bi bi-chat-left-text"></i> Leave a comment &nbsp; <i class="bi bi-person"></i> Joseph Olise</div>
+          <h5>Employment Verification: What Employers Should Know.</h5>
+          <p>Understand what an employment check involves, the information that can be verified, and how previous employment records can support better hiring decisions.</p>
+          <a href="#" class="read-more-link">Read more &gt;&gt;</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- =========================================================
+     TRUSTED PARTNERS (CONTINUOUS MARQUEE CAROUSEL)
+========================================================= -->
+<section class="partners-section py-5">
+  <div class="container text-center overflow-hidden">
+    
+    <!-- Pill Badge Header -->
+    <div class="d-inline-block mb-4">
+      <span class="partners-badge">TRUSTED PARTNERS</span>
+    </div>
+
+    <!-- Infinite Scrolling Logo Track -->
+    <div class="partners-marquee">
+      <div class="partners-track">
+        <!-- Original set of logos -->
+        <div class="partner-item"><img src="images/jubilee_bank-removebg-preview 1.png" alt="Jenga Lane" class="partner-img"></div>
+        <div class="partner-item"><img src="images/habari_pay-removebg-preview 1.png" alt="Habari Pay" class="partner-img"></div>
+        <div class="partner-item"><img src="images/invivo_partners-removebg-preview 1.png" alt="invivopartners" class="partner-img"></div>
+        <div class="partner-item"><img src="images/mbocapitals_logo-removebg-preview 1.png" alt="mbo capital" class="partner-img"></div>
+        <div class="partner-item"><img src="images/smart_partners_logo-removebg-preview 1.png" alt="smart partners consulting" class="partner-img"></div>
+        <div class="partner-item"><img src="images/glyde_logo-removebg-preview 1.png" alt="glyde" class="partner-img"></div>
+        <div class="partner-item"><img src="images/gtbank_logo-removebg-preview 1.png" alt="GTCO" class="partner-img"></div>
+
+        <!-- Duplicated set of logos (Required for seamless continuous loop) -->
+        <div class="partner-item"><img src="images/jubilee_bank-removebg-preview 1.png" alt="Jenga Lane" class="partner-img"></div>
+        <div class="partner-item"><img src="images/habari_pay-removebg-preview 1.png" alt="Habari Pay" class="partner-img"></div>
+        <div class="partner-item"><img src="images/invivo_partners-removebg-preview 1.png" alt="invivopartners" class="partner-img"></div>
+        <div class="partner-item"><img src="images/mbocapitals_logo-removebg-preview 1.png" alt="mbo capital" class="partner-img"></div>
+        <div class="partner-item"><img src="images/smart_partners_logo-removebg-preview 1.png" alt="smart partners consulting" class="partner-img"></div>
+        <div class="partner-item"><img src="images/glyde_logo-removebg-preview 1.png" alt="glyde" class="partner-img"></div>
+        <div class="partner-item"><img src="images/gtbank_logo-removebg-preview 1.png" alt="GTCO" class="partner-img"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer id="contact" class="site-footer">
+  <div class="container">
+    
+    <!-- Newsletter Section -->
+    <div class="row align-items-center pb-5 pt-2">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <h3 class="newsletter-title mb-2">Subscribe to our newsletter</h3>
+        <p class="newsletter-text mb-0">Join our newsletter to stay up to date<br>on feature and releases.</p>
+      </div>
+      <div class="col-lg-6">
+        <form class="d-flex gap-2 justify-content-lg-end">
+          <input type="email" class="form-control newsletter-input" placeholder="youremail@gmail.com" required>
+          <button type="submit" class="btn btn-newsletter">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="footer-divider mb-5">
+
+    <!-- Main Footer Links Section -->
+    <div class="row g-4 pb-5">
+      <div class="col-lg-5 pe-lg-5">
+        <a class="navbar-brand d-inline-block mb-3" href="#home">
+          <img src="images/klinsheet logo 1.png" alt="Klinsheet Consulting Limited" class="footer-logo">
+        </a>
+        <p class="footer-description">We deliver exceptional value to our clients in the area of Background Check services, Recruitment, Training, Business Advisory and Outsourcing.</p>
+        
+        <!-- Social Icons (Orange Squares) -->
+        <div class="d-flex gap-2 mt-4">
+          <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="row g-4">
+          <div class="col-4">
+            <h6 class="footer-heading">Services</h6>
+            <ul class="footer-links">
+              <li><a href="#services">Academic</a></li>
+              <li><a href="#services">NYSC</a></li>
+              <li><a href="#services">Guarantor</a></li>
+              <li><a href="#services">Address</a></li>
+              <li><a href="#services">Credit</a></li>
+              <li><a href="#services">Criminal</a></li>
+              <li><a href="#services">Previous Employee</a></li>
+            </ul>
+          </div>
+
+          <div class="col-4">
+            <h6 class="footer-heading">Quicklinks</h6>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Service</a></li>
+              <li><a href="#contact">Background Check</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-4">
+            <h6 class="footer-heading">Help</h6>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Manage Cookies</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Whatsapp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider mb-0">
+
+    <!-- Bottom Copyright Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-4 gap-2 footer-bottom-text">
+      <p class="mb-0">&copy; 2026 Klinsheet Consulting Ltd. All rights reserved</p>
+      <p class="mb-0">51 Okota Rd, Inside abbey microfinance bank.</p>
+    </div>
+
+  </div>
+</footer>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1197 @@
+/* =============================================================
+   KLINSHEET CONSULTING LIMITED — LANDING PAGE STYLES
+   ============================================================= */
+
+:root {
+  --klin-orange: #E06B3E;
+  --klin-orange-dark: #C85A2E;
+  --klin-navy-text: #17202A;
+  --klin-body-text: #5B6472;
+  --klin-teal: #0C6E93;
+  --klin-teal-dark: #0A5A7A;
+  --klin-sage: #DCE4D3;
+  --klin-sage-dark: #C4D0B7;
+  --klin-green-1: #6FA07E;
+  --klin-green-2: #4C7D63;
+  --klin-bg-light: #F7F8FB;
+
+  --font-display: 'Baloo 2', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--klin-body-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--klin-navy-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+}
+
+.py-lg-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* =============================================================
+   BUTTONS
+   ============================================================= */
+.btn-brand-orange {
+  background-color: var(--klin-orange);
+  border: 1px solid var(--klin-orange);
+  color: #fff;
+  transition: all .2s ease-in-out;
+}
+
+.btn-brand-orange:hover,
+.btn-brand-orange:focus {
+  background-color: var(--klin-orange-dark);
+  border-color: var(--klin-orange-dark);
+  color: #fff;
+}
+
+/* =============================================================
+   NAVBAR
+   ============================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+  color: var(--klin-orange);
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--klin-navy-text);
+  line-height: 1.1;
+}
+
+.brand-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--klin-teal);
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;
+  color: var(--klin-navy-text);
+  padding: 0.4rem 0.2rem;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--klin-orange);
+}
+
+/* =============================================================
+   SECTION HEADERS
+   ============================================================= */
+.section-eyebrow {
+  display: inline-block;
+  background: #EDF1F7;
+  color: var(--klin-navy-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.section-eyebrow--light {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.section-text {
+  color: var(--klin-body-text);
+  line-height: 1.75;
+}
+
+/* Hero Section Container & Gradient Background */
+.hero-section {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #7db9d3 50%, #15799a 100%);
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-weight: 700;
+  font-size: 2.75rem;
+  color: #000000;
+  line-height: 1.25;
+}
+
+/* Person & Badge Overlay Setup */
+.hero-visual {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-person-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-person {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Store Badges Container */
+.hero-store-badges {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  z-index: 2;
+}
+
+/* Shared Badge Styles */
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+}
+
+.store-badge i {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.badge-text small {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.badge-text strong {
+  font-size: 0.9rem;
+}
+
+/* Light Badge (Google Play) */
+.badge-light {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.badge-light i {
+  color: #000000;
+}
+
+/* Dark Badge (Scan Android) */
+.badge-dark {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-dark i {
+  color: #ffffff;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  color: var(--klin-navy-text);
+  border-radius: 10px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.store-badge i {
+  font-size: 1.4rem;
+}
+
+.store-badge--dark {
+  background: #14181c;
+  color: #fff;
+}
+
+/* =============================================================
+   WHAT WE DO — PHONE MOCKUPS
+   ============================================================= */
+.what-we-do-section {
+  background: var(--klin-bg-light);
+}
+img[alt*="Klinsheet App Mockups"] {
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+/* =============================================================
+   OUR SERVICES
+   ============================================================= */
+.services-section {
+  background: #fff;
+}
+
+.service-item h6 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--klin-navy-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-item h6 i {
+  color: var(--klin-orange);
+}
+
+.service-item p {
+  font-size: 0.88rem;
+  color: var(--klin-body-text);
+  margin: 0;
+}
+
+/* Laptop mockup */
+.laptop-mockup {
+  display: inline-block;
+  width: 100%;
+  max-width: 420px;
+}
+
+.laptop-screen {
+  background: #16191c;
+  border-radius: 14px 14px 0 0;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  min-height: 300px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+.laptop-base {
+  height: 14px;
+  background: linear-gradient(#2b2f33, #101214);
+  border-radius: 0 0 10px 10px;
+  margin: 0 -8px;
+}
+
+.dashboard-sidebar {
+  background: #1e2226;
+  border-radius: 8px;
+  padding: 10px 8px;
+  width: 34%;
+  color: #cfd3d8;
+  font-size: 0.55rem;
+}
+
+.dashboard-user {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.6rem;
+  margin-bottom: 8px;
+}
+
+.dashboard-nav-item {
+  padding: 5px 6px;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dashboard-nav-item i {
+  font-size: 0.65rem;
+}
+
+.dashboard-nav-item.active {
+  background: var(--klin-orange);
+  color: #fff;
+}
+
+.dashboard-main {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  width: 66%;
+  text-align: left;
+  font-size: 0.62rem;
+}
+
+.dashboard-main h6 {
+  font-size: 0.8rem;
+}
+
+.dashboard-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f4f5f7;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+}
+
+.dashboard-row i {
+  color: var(--klin-orange);
+  font-size: 0.9rem;
+}
+
+.dashboard-row small {
+  color: #8b8f97;
+  font-size: 0.55rem;
+}
+
+.verify-box {
+  border: 1px solid #e3e5e9;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--klin-navy-text);
+}
+
+.verify-box small {
+  display: block;
+  font-weight: 400;
+  color: #9aa0a8;
+  font-size: 0.45rem;
+}
+
+.verify-box.active {
+  border-color: var(--klin-orange);
+  background: #fff5ef;
+}
+
+.laptop-mockup--form .dashboard-main {
+  width: 100%;
+}
+
+.laptop-mockup--form .laptop-screen {
+  min-height: 340px;
+}
+
+/* =============================================================
+   DOWNLOAD APP CTA
+   ============================================================= */
+.download-app-section {
+  background: var(--klin-bg-light);
+  padding: 4rem 0;
+}
+
+.download-app-card {
+  background: linear-gradient(120deg, var(--klin-green-1), var(--klin-green-2));
+  border-radius: 22px;
+  padding: 3.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.download-text {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.download-phones {
+  position: relative;
+  height: 380px;
+}
+
+.download-phone {
+  position: absolute;
+  width: 190px;
+  height: 380px;
+  border-radius: 28px;
+  border: 6px solid #1a1a1a;
+  overflow: hidden;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+.download-phone--back {
+  left: 10%;
+  top: 0;
+  background: linear-gradient(160deg, #23282c, #14171a);
+  z-index: 1;
+}
+
+.download-phone--front {
+  right: 5%;
+  top: 40px;
+  background: linear-gradient(160deg, #7fbf6b, #4d8f3d);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.lock-icon {
+  font-size: 2.6rem;
+  color: #fff;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* =============================================================
+   HOW IT WORKS
+   ============================================================= */
+.how-it-works-section {
+  background: var(--klin-sage);
+}
+
+.how-step {
+  border-left: 3px solid var(--klin-orange);
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.how-step h5 {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.how-step p {
+  color: var(--klin-body-text);
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =============================================================
+   HR SOLUTIONS
+   ============================================================= */
+.hr-solutions-section {
+  background: #fff;
+}
+
+.hr-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #eef0f3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hr-card-body {
+  padding: 1.4rem;
+}
+
+.hr-card-body h5 {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.hr-card-body p {
+  font-size: 0.88rem;
+  color: var(--klin-body-text);
+  margin-bottom: 1rem;
+}
+
+/* =============================================================
+   STATS
+   ============================================================= */
+/* Container Background Card */
+.stats-card {
+  background: linear-gradient(135deg, rgba(32, 114, 76, 0.92), rgba(20, 80, 50, 0.95)), 
+              url('path-to-your-laptop-bg.jpg') center/cover no-repeat;
+  border-radius: 24px;
+}
+
+/* Individual Stat Boxes */
+.stat-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.stat-number {
+  color: #000000;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.stat-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 20px 0 16px 0;
+}
+
+.stat-label {
+  color: #111111;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+/* Container Background Card with Dual Gradients & Background Image */
+.stats-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  /* Layers: Bright top-left/bottom-right radial glows + semi-transparent base green + laptop image */
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(108, 147, 58, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(108, 147, 58, 0.5) 0%, transparent 45%),
+    linear-gradient(135deg, rgba(32, 105, 68, 0.88), rgba(18, 70, 45, 0.92)),
+    url('images/2cca07193755b31b1b1f9c89601e4ce264316726.jpg') center/cover no-repeat;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+/* =============================================================
+   FAQ
+   ============================================================= */
+.faq-section {
+  background: var(--klin-sage-dark);
+}
+
+
+.faq-contact-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.faq-contact-card h5 {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.faq-contact-card p {
+  font-size: 0.9rem;
+  color: var(--klin-body-text);
+  margin-bottom: 1.2rem;
+}
+
+.accordion-item {
+  background: #fff;
+  border: none;
+  border-radius: 12px !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-button {
+  font-weight: 700;
+  color: var(--klin-navy-text);
+  font-size: 0.95rem;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #fff;
+  color: var(--klin-navy-text);
+}
+
+.accordion-button::after {
+  background-image: none;
+  content: "\f2d1";
+  font-family: "bootstrap-icons";
+  font-size: 0.9rem;
+  background-color: var(--klin-teal);
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-body {
+  font-size: 0.88rem;
+  color: var(--klin-body-text);
+  line-height: 1.7;
+}
+
+/* =============================================================
+   TESTIMONIALS
+   ============================================================= */
+/* Section Badge */
+.section-badge {
+  background-color: #e2f0e8;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  color: #111;
+  font-size: 2.25rem;
+}
+
+/* Card Container & Layout */
+.testimonial-card-wrapper {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.testimonial-card {
+  background-color: #f1f5ee; /* Soft Figma light green */
+  border-radius: 20px;
+  padding: 35px 30px 45px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Quote Icon Styling */
+.quote-icon {
+  color: #f07444; /* Figma orange */
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  color: #555555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Stars */
+.stars {
+  color: #f07444;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 4px;
+}
+
+/* Profile Info Block (Positioned Bottom-Left Cutout) */
+.testimonial-author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 8px 20px 8px 8px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.author-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  display: block;
+  font-size: 0.9rem;
+  color: #111;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.author-time {
+  display: block;
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+/* Carousel Indicator Bar */
+.carousel-indicator {
+  width: 40px;
+  height: 5px;
+  background-color: #f07444;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+/* Main Section setup */
+.industries-section {
+  background-color: #000000; /* Dark backdrop behind the image strip */
+  padding: 0;
+  position: relative;
+}
+
+/* Section Badge Header */
+.section-badge {
+  background-color: #eaf4f8;
+  color: #1a202c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 18px;
+  border-radius: 6px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 1rem;
+}
+
+/* Header & CTA Positioning over SVG */
+.header-wrapper {
+  padding-top: 1.5rem;
+  margin-bottom: -40px;
+}
+
+.cta-wrapper {
+  margin-top: -60px;
+  padding-bottom: 2rem;
+}
+
+/* Curves Positioning */
+.curve-mask {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curve-mask svg {
+  display: block;
+  width: 100%;
+  height: 180px;
+}
+
+.curve-top {
+  top: 0;
+}
+
+.curve-bottom {
+  bottom: 0;
+}
+
+/* Image Strip & Hover Effects */
+.industries-strip-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 40px 0;
+}
+
+.industries-row {
+  min-width: 1200px;
+  width: 100%;
+}
+
+.industry-item {
+  position: relative;
+  flex: 1;
+  height: 380px;
+  overflow: hidden;
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.industry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Blue Overlay Badges on Images */
+.industry-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 115, 145, 0.75); /* Semi-transparent blue */
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Orange CTA Button */
+.btn-brand-orange {
+  background-color: #f26522;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.btn-brand-orange:hover {
+  background-color: #d95316;
+  color: #ffffff;
+}
+
+/* =============================================================
+   INSIGHT / BLOG
+   ============================================================= */
+.insight-section {
+  background: var(--klin-bg-light);
+}
+
+.blog-card {
+  background: transparent;
+}
+
+.blog-img-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 220px;
+  margin-bottom: 1rem;
+}
+
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-meta {
+  font-size: 0.72rem;
+  color: #9aa0a8;
+  margin-bottom: 0.6rem;
+}
+
+.blog-card h5 {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-card p {
+  font-size: 0.86rem;
+  color: var(--klin-body-text);
+  line-height: 1.6;
+}
+
+.read-more-link {
+  color: var(--klin-navy-text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-bottom: 2px solid var(--klin-orange);
+  padding-bottom: 2px;
+}
+/* Partners Section */
+.partners-section {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.partners-badge {
+  display: inline-block;
+  background-color: #e2ede5;
+  color: #222222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Wrapper and Responsive Item Grid */
+.partners-logos-wrapper {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.partner-img {
+  max-width: 120px; /* Constrains logo size on desktop */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%); /* Optional: Normalizes brand colors if needed */
+  opacity: 0.8;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.partner-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Screen Size Adjustments */
+@media (max-width: 768px) {
+  .partner-item {
+    flex: 0 1 calc(33.333% - 1.5rem); /* Displays 3 logos per row on mobile screens */
+  }
+  
+  .partner-img {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-item {
+    flex: 0 1 calc(50% - 1rem); /* Displays 2 logos per row on smaller mobile devices */
+  }
+}
+/* Footer Base Background & Colors */
+.site-footer {
+  background-color: #0b7b99; /* Exact teal color from image */
+  color: #ffffff;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-family: inherit;
+}
+
+/* Horizontal Dividers */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+/* Newsletter Styles */
+.newsletter-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.newsletter-input {
+  max-width: 380px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.newsletter-input::placeholder {
+  color: #b0b0b0;
+}
+
+.btn-newsletter {
+  background-color: #f26522; /* Brand orange color */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 1.75rem;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-newsletter:hover {
+  background-color: #d95316;
+  color: #ffffff;
+}
+
+/* Logo & Content */
+.footer-logo {
+  max-height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Makes the logo white if SVG/transparent, or remove filter if image is already white */
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Social Icon Boxes */
+.social-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f26522;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.social-box:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Link Columns */
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+}
+
+
+
+/* =============================================================
+   RESPONSIVE
+   ============================================================= */
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .phone-mockup-group {
+    min-height: 420px;
+  }
+
+  .download-app-card {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .download-title {
+    font-size: 2rem;
+  }
+
+  .stats-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .phone-mockup-group {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}
