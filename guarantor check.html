@@ -7,472 +7,19 @@
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
-  <style>
-    /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      color: #333;
-      line-height: 1.6;
-      background-color: #fff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Color Variables */
-    :root {
-      --teal-bg: #007696;
-      --green-bg: #80c2a6;
-      --orange-btn: #f1683a;
-      --light-badge-bg: rgba(255, 255, 255, 0.2);
-      --badge-orange-bg: #fdeee9;
-      --badge-orange-text: #f1683a;
-      --card-white: #ffffff;
-    }
-
-    /* Bootstrap Navbar Customization */
-    .navbar-custom {
-      background-color: #ffffff;
-      padding: 15px 0;
-    }
-
-    .navbar-brand img {
-      max-height: 45px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-link-custom {
-      color: #333333 !important;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 8px 16px !important;
-      transition: color 0.2s ease;
-    }
-
-    .nav-link-custom:hover,
-    .nav-link-custom.active {
-    color: var(--orange-btn) !important;
-    }
-    /* Glassmorphism Dropdown Menu Container */
-.dropdown-menu-glass {
-  background: 
-    linear-gradient(rgba(0, 118, 150, 0.82), rgba(0, 118, 150, 0.82)), 
-    url('images/blog\ pics.png') center/cover no-repeat !important;
   
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  border-radius: 24px !important;
-  padding: 28px 24px !important; /* Slightly increased side padding */
-  
-  /* Forces container to expand automatically to fit long single-line text */
-  width: max-content !important;
-  min-width: 290px;
-  
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Dropdown Menu Items - Straight single-line text */
-.dropdown-menu-glass .dropdown-item {
-  color: #ffffff !important;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.2s ease-in-out;
-  background: transparent !important;
-  
-  /* Key properties: Prevents text wrapping and keeps it straight on one line */
-  white-space: nowrap !important;
-  display: block;
-}
-
-/* Hover and Active Highlights */
-.dropdown-menu-glass .dropdown-item:hover,
-.dropdown-menu-glass .dropdown-item.active {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
-}
-
-/* Desktop Hover Support */
-@media (min-width: 992px) {
-  .nav-item.dropdown:hover .dropdown-menu-glass {
-    display: block;
-    margin-top: 0;
-  }
-}
-
-    /* Navbar Service Dropdown */
-    .dropdown-menu-custom {
-      border: none;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border-radius: 8px;
-      padding: 10px 0;
-    }
-
-    .dropdown-menu-custom .dropdown-item {
-      font-size: 13.5px;
-      padding: 8px 20px;
-      color: #444;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .dropdown-menu-custom .dropdown-item:hover {
-      background-color: #f4f8f9;
-     color: var(--orange-btn);   /* Orange text */
-      padding-left: 24px;
-    }
-
-    /* Enable Hover for Desktop Dropdown */
-    @media (min-width: 992px) {
-      .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-      }
-    }
-
-    /* Components */
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 4px;
-      margin-bottom: 16px;
-    }
-
-    .badge-white {
-      background-color: #ffffff;
-      color: #f1683a;
-    }
-
-    .badge-orange {
-      background-color: var(--badge-orange-bg);
-      color: var(--badge-orange-text);
-    }
-
-    .btn-orange {
-      background-color: var(--orange-btn);
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      transition: background 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-orange:hover {
-      background-color: green;
-      color: #ffffff;
-    }
-
-    /* Section 1: Hero Banner */
-    .hero {
-      background-color: var(--teal-bg);
-      color: #ffffff;
-      padding: 80px 8%;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      max-width: 500px;
-      line-height: 1.2;
-      font-weight: 700;
-    }
-
-    /* Section 2: What is Guarantor Verification */
-    .about-section {
-      padding: 80px 8%;
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .about-image-wrapper {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-image-placeholder {
-      width: 100%;
-      max-width: 420px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-image-placeholder img {
-      max-width: 100%;
-      height: auto;
-      max-height: 480px;
-      object-fit: contain;
-    }
-
-    .about-content {
-      flex: 1;
-      min-width: 320px;
-    }
-
-    .about-content p {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: 24px 0 32px 0;
-    }
-
-    .feature-item h4 {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .feature-item p {
-      font-size: 12px;
-      color: #666;
-      margin: 0;
-    }
-    /* Icon in front of Heading Layout */
-    .feature-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .feature-header img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .feature-item h4 {
-      font-size: 14px;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .feature-item p {
-      font-size: 12px;
-      color: #666;
-      margin: 0;
-      padding-left: 30px; /* Aligns description text under title nicely */
-    }
-
-    /* Section 3: What We Verify */
-    .verify-section {
-      background-color: var(--green-bg);
-      padding: 80px 8%;
-    }
-
-    .verify-section h2 {
-      font-size: 28px;
-      color: #ffffff;
-      max-width: 500px;
-      margin-bottom: 40px;
-    }
-
-    .cards-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background-color: var(--card-white);
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      border: none;
-    }
-
-    .card-icon {
-      width: 32px;
-      height: 32px;
-      background-color: #e6f3f5;
-      color: var(--teal-bg);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-
-    .card h3 {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 12px;
-      color: #666;
-      margin: 0;
-    }
-
-    /* Section 4: Why Choose Us */
-    .why-section {
-      padding: 80px 8%;
-      background-color: #f9fbfb;
-    }
-
-    .why-section h2 {
-      font-size: 28px;
-      margin-bottom: 40px;
-    }
-
-    .cards-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    /* Section 5: Newsletter & Footer */
-    footer {
-      background-color: var(--teal-bg);
-      color: #ffffff;
-      padding: 60px 8% 20px 8%;
-    }
-
-    .newsletter {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding-bottom: 40px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .newsletter-text h3 {
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .newsletter-text p {
-      font-size: 12px;
-      opacity: 0.8;
-      margin: 0;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 8px;
-    }
-
-    .newsletter-form input {
-      padding: 10px 16px;
-      border-radius: 4px;
-      border: none;
-      width: 260px;
-      outline: none;
-    }
-
-    .social-wrapper {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .social-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background-color: #f1683a;
-      color: #ffffff;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .social-box:hover {
-      color: #ffffff;
-      background-color: #d95328;
-      transform: translateY(-2px);
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-col ul li {
-      font-size: 12px;
-      opacity: 0.8;
-      margin-bottom: 8px;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      opacity: 0.6;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .footer-content { grid-template-columns: 1fr 1fr; }
-      .hero h1 { font-size: 32px; }
-      .newsletter-form input { width: 100%; }
-    }
-  </style>
 </head>
 <body>
 
   <!-- BOOTSTRAP NAVBAR WITH DROPDOWN -->
   <nav class="navbar navbar-expand-lg navbar-custom border-bottom sticky-top">
-    <div class="container-fluid px-lg-5">
+    <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img src="images/klinsheet logo 1.png" alt="klinsheet Logo">
+        <img class="img-fluid" src="images/klinsheet logo 1.png" alt="klinsheet Logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
@@ -502,189 +49,159 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Job Portal</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="contact us.html">Contact</a></li>
         </ul>
-        <a href="request background check.html" class="btn btn-orange ms-lg-3 mt-3 mt-lg-0">Request a Background Check</a>
+        <a href="request background check.html" class="btn-orange ms-lg-3 mt-3 mt-lg-0">Request a Background Check</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <span class="badge badge-white">Guarantor Check</span>
-    <h1>Verify the Person<br> Behind the Guarantee.</h1>
-  </section>
+  <section class="hero-inner"><div class="container"><span class="badge-orange">Guarantor Check</span><h1>Verify the Person  Behind the Guarantee.</h1></div></section>
 
   <!-- About Section -->
-  <section class="about-section">
-    <div class="about-image-wrapper">
-      <div class="about-image-placeholder">
-        <img src="images/Group 33373 copy.png" alt="Guarantors App Preview">
-      </div>
-    </div>
-    <div class="about-content">
-      <span class="badge badge-orange">What is Guarantor Verification?</span>
+  <section class="py-5"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6 text-center"><div>
+        <img class="img-fluid" src="images/Group 33373 copy.png" alt="Guarantors App Preview">
+      </div></div><div class="col-lg-6">
+      <span class="badge-orange">What is Guarantor Verification?</span>
       <p>A guarantor check helps organizations confirm the identity, contact information, address, and relevant details of a person providing a guarantee for an applicant.</p>
       <p>Hinsheet provides a secure and structured verification process that helps you validate guarantor information and make more informed decisions.</p>
 
-      <div class="features-grid">
-        <div class="feature-item">
+      <div class="row g-3 my-3">
+        <div class="col-sm-6"><div class="feature-item">
           <div class="feature-header">
-          <img src="images/Frame (2).png" alt="">
+          <img class="img-fluid" src="images/Frame (2).png" alt="">
           <h4>Reduce Fraud Risk</h4>
           </div>
-          <p>Identify potential fake accounts or misleading information.</p>
-        </div>
-        <div class="feature-item">
+          <p>Identify potential fake accounts or misleading information.</p></div></div>
+        <div class="col-sm-6"><div class="feature-item">
           <div class="feature-header">
-          <img src="images/Frame (3).png" alt="">
+          <img class="img-fluid" src="images/Frame (3).png" alt="">
           <h4>Confirm Authenticity</h4>
           </div>
-          <p>Ensure the guarantor is a real and verifiable person.</p>
-        </div>
-        <div class="feature-item">
+          <p>Ensure the guarantor is a real and verifiable person.</p></div></div>
+        <div class="col-sm-6"><div class="feature-item">
           <div class="feature-header">
-          <img src="images/Frame (4).png" alt="">
+          <img class="img-fluid" src="images/Frame (4).png" alt="">
           <h4>Improve Accountability</h4>
           </div>
-          <p>Maintain reliable records of guarantor information.</p>
-        </div>
-        <div class="feature-item">
+          <p>Maintain reliable records of guarantor information.</p></div></div>
+        <div class="col-sm-6"><div class="feature-item">
           <div class="feature-header">
-          <img src="images/Frame (5).png" alt="">
+          <img class="img-fluid" src="images/Frame (5).png" alt="">
           <h4>Protect Your Organization</h4>
           </div>
-          <p>Reduce exposure to unreliable verification and onboarding risks.</p>
-        </div>
+          <p>Reduce exposure to unreliable verification and onboarding risks.</p></div></div>
       </div>
 
-      <button class="btn btn-orange">Request Guarantor Verification</button>
-    </div>
-  </section>
+      <a href="request background check.html" class="btn-orange">Request Guarantor Verification</a></div></div></div></section>
 
   <!-- What We Verify Section -->
-  <section class="verify-section">
-    <span class="badge badge-white">What We Verify</span>
-    <h2>Comprehensive Checks on Important<br> Guarantor Information.</h2>
+  <section class="verify-band py-5"><div class="container">
+    <span class="badge-orange">What We Verify</span>
+    <h2>Comprehensive Checks on Important  Guarantor Information.</h2>
 
-    <div class="cards-grid-3">
-      <div class="card">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/Frame.png" alt="">
+          <img class="img-fluid" src="images/Frame.png" alt="">
         </div>
         <h3>Identity Verification</h3>
         <hr>
-        <p>Confirm the guarantor's identity and<br> personal information.</p>
-      </div>
-      <div class="card">
+        <p>Confirm the guarantor's identity and  personal information.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/cil_institution.png" alt="">
+          <img class="img-fluid" src="images/cil_institution.png" alt="">
         </div>
         <h3>Contact Details</h3>
         <hr>
-        <p>Validate phone numbers, email addresses,<br> and other contact information.</p>
-      </div>
-      <div class="card">
+        <p>Validate phone numbers, email addresses,  and other contact information.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/tdesign_institution-checked (1).png" alt="">
+          <img class="img-fluid" src="images/tdesign_institution-checked (1).png" alt="">
         </div>
         <h3>Address Confirmation</h3>
         <hr>
-        <p>Verify physical and stated residential<br> or business addresses.</p>
-      </div>
-      <div class="card">
+        <p>Verify physical and stated residential  or business addresses.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/tabler_book.png" alt="">
+          <img class="img-fluid" src="images/tabler_book.png" alt="">
         </div>
         <h3>Employment Information</h3>
         <hr>
-        <p>Where applicable, confirm employment<br> details provided by the guarantor.</p>
-      </div>
-      <div class="card">
+        <p>Where applicable, confirm employment  details provided by the guarantor.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/griddy-icons_certificate.png" alt="">
+          <img class="img-fluid" src="images/griddy-icons_certificate.png" alt="">
         </div>
         <h3>Relationship to Applicant</h3>
         <hr>
-        <p>Verify the stated relationship between<br> the applicant and guarantor.</p>
-      </div>
-      <div class="card">
+        <p>Verify the stated relationship between  the applicant and guarantor.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/pinhead_book-with-square-academic-cap.png" alt="">
+          <img class="img-fluid" src="images/pinhead_book-with-square-academic-cap.png" alt="">
         </div>
         <h3>Provided Information</h3>
         <hr>
-        <p>Cross-check relevant information for<br> inaccuracies or discrepancies.</p>
-      </div>
-    </div>
-  </section>
+        <p>Cross-check relevant information for  inaccuracies or discrepancies.</p>
+      </div></div></div></div></section>
 
   <!-- Why Choose Us Section -->
-  <section class="why-section">
-    <span class="badge badge-orange">Why Choose Guarantor Verification</span>
-    <h2>Why Organizations Use<br> Guarantor Verification</h2>
+  <section class="why-section py-5"><div class="container"><span class="badge-orange">Why Choose Guarantor Verification</span>
+    <h2>Why Organizations Use  Guarantor Verification</h2>
 
-    <div class="cards-grid-4">
-      <div class="card">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/Frame (1).png" alt="">
+          <img class="img-fluid" src="images/Frame (1).png" alt="">
         </div>
         <h3>Secure & Confidential</h3>
         <hr>
-        <p>Sensitive personal information is<br> handled responsibly throughout<br> the verification process.</p>
-      </div>
-      <div class="card">
+        <p>Sensitive personal information is  handled responsibly throughout  the verification process.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/gravity-ui_persons.png" alt="">
+          <img class="img-fluid" src="images/gravity-ui_persons.png" alt="">
         </div>
         <h3>Thorough Checks</h3>
         <hr>
-        <p>We review key guarantor information<br> to help identify inconsistencies<br> and potential concerns.</p>
-      </div>
-      <div class="card">
+        <p>We review key guarantor information  to help identify inconsistencies  and potential concerns.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/ic_sharp-support-agent.png" alt="">
+          <img class="img-fluid" src="images/ic_sharp-support-agent.png" alt="">
         </div>
         <h3>Fast Turnaround</h3>
         <hr>
-        <p>Our process helps you receive<br> verification results without<br> unnecessary delays.</p>
-      </div>
-      <div class="card">
+        <p>Our process helps you receive  verification results without  unnecessary delays.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-custom h-100">
         <div class="card-icon">
-          <img src="images/carbon_decision-tree.png" alt="">
+          <img class="img-fluid" src="images/carbon_decision-tree.png" alt="">
         </div>
         <h3>Accurate Reporting</h3>
         <hr>
-        <p>Receive clear, professional<br> reports that make verification<br> findings easy to understand.</p>
-      </div>
-    </div>
-  </section>
+        <p>Receive clear, professional  reports that make verification  findings easy to understand.</p>
+      </div></div></div></div></section>
 
   <!-- Footer Section -->
-  <footer>
-    <div class="newsletter">
-      <div class="newsletter-text">
-        <h3>Subscribe to our newsletter</h3>
+  <footer class="site-footer"><div class="container"><div class="row align-items-center g-3 pb-4 mb-4 border-bottom border-white border-opacity-25">
+      <div class="col-lg-6">
+        <h3 class="newsletter-title">Subscribe to our newsletter</h3>
         <p>Join our newsletter to stay up to date on features and releases.</p>
       </div>
-      <form class="newsletter-form" onsubmit="event.preventDefault();">
-        <input type="email" placeholder="Enter your email address">
-        <button class="btn btn-orange">Join</button>
-      </form>
+      <div class="col-lg-6"><form class="d-flex gap-2 justify-content-lg-end" onsubmit="event.preventDefault();"><input class="form-control newsletter-input" type="email" placeholder="Enter your email address"><button class="btn-orange">Join</button></form></div>
     </div>
 
-    <div class="footer-content">
-      <div class="footer-col">
-        <div class="logo" style="margin-bottom: 12px;"><img src="images/klinsheet logo 1.png" alt="Hinsheet Logo" style="max-height: 40px;"></div>
-        <p style="font-size: 12px; opacity: 0.8; max-width: 280px;">We deliver exceptional value to our clients in the area of background check services, recruitment, training, business advisory and outsourcing.</p>
-        <div class="social-wrapper">
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="mb-3"><img class="img-fluid footer-logo" src="images/klinsheet logo 1.png" alt="Hinsheet Logo" ></div>
+        <p class="footer-description">We deliver exceptional value to our clients in the area of background check services, recruitment, training, business advisory and outsourcing.</p>
+        <div class="d-flex gap-2 mt-3">
           <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
           <a href="#" class="social-box"><i class="bi bi-whatsapp"></i></a>
           <a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
           <a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
+      <div class="col-6 col-lg-3">
+        <h6 class="footer-heading">Services</h6>
+        <ul class="footer-links">
           <li>Academic</li>
           <li>NYSC</li>
           <li>Guarantor</li>
@@ -694,9 +211,9 @@
           <li>Previous Employee</li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Quicklinks</h4>
-        <ul>
+      <div class="col-6 col-lg-3">
+        <h6 class="footer-heading">Quicklinks</h6>
+        <ul class="footer-links">
           <li>Home</li>
           <li>About</li>
           <li>Service</li>
@@ -704,9 +221,9 @@
           <li>Contact</li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
+      <div class="col-6 col-lg-3">
+        <h6 class="footer-heading">Help</h6>
+        <ul class="footer-links">
           <li>Terms of Use</li>
           <li>Privacy Policy</li>
           <li>Manage Cookies</li>
@@ -714,11 +231,10 @@
           <li>WhatsApp</li>
         </ul>
       </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 klinsheet Consulting Ltd. All rights reserved.</p>
+    </div><div class="d-flex flex-column flex-md-row justify-content-between gap-2 pt-3 mt-4 border-top border-white border-opacity-25 text-white-50">
+      <p class="mb-0">&copy; 2026 klinsheet Consulting Ltd. All rights reserved.</p>
       <p>51 Okuru Rd, Off Abacha Road, Port Harcourt</p>
+    </div>
     </div>
   </footer>
 
