@@ -23,6 +23,8 @@ img{max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4,h5,h6{color:var(--ink);line-height:1.25}
 section{position:relative}
+.py-lg-6{padding-top:5rem;padding-bottom:5rem}
+@media(max-width:991.98px){.py-lg-6{padding-top:3rem;padding-bottom:3rem}}
 
 /* ---------- Buttons / badges (brand only) ---------- */
 .btn-orange{background:var(--orange);color:#fff;font-weight:600;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:.9rem;display:inline-block;transition:.2s}
@@ -52,8 +54,16 @@ section{position:relative}
 .store-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.55rem 1rem;border-radius:12px;min-width:170px;transition:.2s}
 .store-badge:hover{transform:translateY(-2px)}
 .store-badge .img1{width:30px;height:30px;object-fit:contain}
-.badge-light{background:#fff;color:#000;box-shadow:0 4px 15px rgba(0,0,0,.12)}
-.badge-dark{background:#000;color:#fff}
+.badge-light,.store-badge-light{background:#fff;color:#000;box-shadow:0 4px 15px rgba(0,0,0,.12)}
+.badge-dark,.store-badge-dark{background:#000;color:#fff}
+.btn-brand-orange,.btn-newsletter{background:#f26522;color:#fff;font-weight:600;padding:.65rem 1.75rem;border-radius:8px;border:none;display:inline-block}
+.btn-brand-orange:hover,.btn-newsletter:hover{background:#d95316;color:#fff}
+.section-tag{display:inline-block;background:#e8eef1;color:#4a5568;font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:.35rem .9rem;border-radius:5px;text-transform:uppercase;margin-bottom:.8rem}
+.hr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:991.98px){.hr-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767.98px){.hr-cards{grid-template-columns:1fr}}
+.service-item h6 img{width:22px;height:22px}
+.faq-contact-card .btn-brand-orange{border-radius:50rem}
 .store-badge .badge-text{display:flex;flex-direction:column;line-height:1.2;text-align:left}
 .store-badge small{font-size:.7rem;opacity:.8}
 .store-badge strong{font-size:.9rem}
@@ -64,6 +74,7 @@ section{position:relative}
 
 /* ---------- Service / about / verify / why cards ---------- */
 .service-item h6{display:flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;margin-bottom:.4rem}
+.service-item h6 i{color:var(--orange);font-size:1rem}
 .service-item h6 img{width:20px;height:20px;object-fit:contain}
 .service-item p{font-size:.86rem;color:var(--muted);margin:0}
 .laptop-mockup img{border-radius:12px}
@@ -112,17 +123,18 @@ section{position:relative}
 .accordion-item{border:none!important;border-radius:12px!important;margin-bottom:.8rem;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.04)}
 .accordion-button{font-weight:700;font-size:.92rem}
 .accordion-button:not(.collapsed){background:#fff;color:var(--ink)}
-.testimonial-card{background:#f1f5ee;border-radius:18px;padding:2rem 1.5rem 3rem;min-height:260px;height:100%}
-.quote-icon{color:var(--orange);font-size:2.4rem;line-height:1;margin-bottom:.6rem}
-.testimonial-text{color:#555;font-size:.9rem;margin-bottom:1rem}
-.stars{color:var(--orange);display:flex;gap:4px}
-.testimonial-author{position:absolute;bottom:0;left:0;background:#fff;padding:.4rem 1rem .4rem .4rem;border-top-right-radius:16px;display:flex;align-items:center;gap:.6rem;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.testimonial-card-wrapper{position:relative;height:100%}
+.testimonial-card{background:#f1f5ee;border-radius:20px;padding:1.8rem 1.5rem 5.5rem;min-height:290px;height:100%}
+.quote-icon{color:var(--orange);font-size:1.8rem;line-height:1;margin-bottom:.6rem}
+.testimonial-text{color:#333;font-size:.86rem;line-height:1.65;margin-bottom:1rem}
+.stars{color:var(--orange);display:flex;gap:4px;font-size:.85rem}
+.testimonial-author{position:absolute;bottom:28px;left:0;background:#fff;border-top-right-radius:20px;padding:.55rem 1.25rem .55rem .55rem;display:flex;align-items:center;gap:.65rem;max-width:92%}
 .author-img{width:42px;height:42px;border-radius:50%;object-fit:cover}
-.industry-carousel{overflow:hidden}
-.industry-track{display:flex;gap:.75rem;width:max-content;animation:slideX 24s linear infinite}
+.industry-carousel{overflow:hidden;height:340px;clip-path:url(#fisheye-clip);-webkit-clip-path:url(#fisheye-clip)}
+.industry-track{display:flex;width:max-content;height:100%;animation:slideX 24s linear infinite}
 .industry-carousel:hover .industry-track{animation-play-state:paused}
-@keyframes slideX{to{transform:translateX(calc(-50% - 6px))}}
-.industry-card{position:relative;width:180px;height:230px;flex:0 0 180px;overflow:hidden;border-radius:10px;background:#eee}
+@keyframes slideX{to{transform:translateX(calc(-50%))}}
+.industry-card{position:relative;width:200px;height:100%;flex:0 0 200px;overflow:hidden;background:#eee}
 .industry-card img{width:100%;height:100%;object-fit:cover}
 .industry-card span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(25,125,150,.88);color:#fff;padding:.35rem .8rem;border-radius:6px;font-size:.75rem;font-weight:600;white-space:nowrap}
 .blog-img-wrap{border-radius:14px;overflow:hidden;aspect-ratio:16/10;margin-bottom:1rem}
@@ -165,18 +177,48 @@ section{position:relative}
 .footer-links a:hover{color:#fff;text-decoration:underline}
 .footer-bottom-text{color:rgba(255,255,255,.85);font-size:.85rem}
 
+/* ---------- Request / Contact forms ---------- */
+.hero-form-wrapper{background:var(--teal);padding:clamp(3rem,7vw,5rem) 0 5rem;color:#fff}
+.hero-form-wrapper h1{color:#fff;font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);max-width:600px;margin-bottom:2rem}
+.form-card{background:#fff;border-radius:16px;padding:clamp(1.5rem,4vw,3rem);color:#333;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.form-card .form-label{font-size:.75rem;font-weight:600;color:#333}
+.form-card .form-label span{color:var(--orange)}
+.form-card .form-control,.form-card .form-select{background:#edf2f0;border:1px solid transparent;border-radius:8px;font-size:.85rem;padding:.7rem .9rem;color:#333}
+.form-card .form-control:focus,.form-card .form-select:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 .2rem rgba(0,118,150,.15)}
+.form-card textarea.form-control{min-height:120px;resize:vertical}
+.upload-box{border:2px dashed #b2d2ca;background:#f7faf9;border-radius:10px;padding:1.8rem 1.2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.upload-icon{color:var(--orange);font-size:1.6rem}
+.upload-box p{font-size:.78rem;color:#555;margin:0}
+.btn-sm-orange{background:var(--orange);color:#fff;padding:.4rem 1rem;font-size:.75rem;font-weight:600;border-radius:6px;border:none}
+.btn-sm-orange:hover{background:var(--orange-dark);color:#fff}
+.file-item{margin-top:.6rem;font-size:.78rem}
+.file-info{display:flex;align-items:center;gap:.5rem;font-weight:500;margin-bottom:.25rem}
+.progress{height:5px;background:#e0e0e0;border-radius:3px;overflow:hidden}
+.progress-bar{border-radius:3px}
+.contact-section{padding:clamp(3rem,6vw,5rem) 0}
+.contact-info-card{background:var(--teal);color:#fff;border-radius:16px;padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
+.info-item{display:flex;gap:.8rem;align-items:flex-start;min-width:200px;flex:1}
+.info-icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.info-text h4{color:#fff;font-size:.95rem;margin-bottom:.2rem}
+.info-text p{font-size:.82rem;color:rgba(255,255,255,.88);margin:0}
+.contact-form-wrapper{padding:clamp(1.5rem,4vw,3rem) 0}
+.map-section iframe{width:100%;min-height:320px;border:0;border-radius:16px}
 /* ---------- Responsive fixes ---------- */
 @media(max-width:991.98px){
   .hero-store-badges{position:static;transform:none;margin:1rem auto 1.5rem;flex-wrap:wrap;justify-content:center}
   .hero-person{max-width:380px}
   .download-app-card{text-align:center}
   .phones-img{margin:1.5rem auto 0}
-  .industry-card{width:220px;flex-basis:220px}
+  .industry-carousel{height:260px}
+  .industry-card{width:200px;flex-basis:200px}
+}
+@media(max-width:575.98px){
+  .industry-carousel{clip-path:none;-webkit-clip-path:none;height:220px}
 }
 @media(max-width:767.98px){
   .dropdown-menu-glass{min-width:0;width:100%!important}
-  .testimonial-author{position:static;margin-top:-1.5rem;border-radius:12px;display:inline-flex}
-  .testimonial-card-wrapper{padding-bottom:0}
+  .testimonial-card{padding-bottom:1.8rem}
+  .testimonial-author{position:static;border-radius:12px;margin-top:1rem;display:inline-flex}
   .video-banner{aspect-ratio:16/10}
 }
 @media(max-width:575.98px){

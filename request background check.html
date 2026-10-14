@@ -71,63 +71,64 @@
   </nav>
 
   <section class="hero-form-wrapper">
+    <div class="container">
     <span class="badge-orange">BACKGROUND CHECK</span>
-    <h1>Start Your  Background Check Today.</h1>
+    <h1>Start Your Background Check Today.</h1>
 
     <div class="form-card">
       <span class="badge-orange">REQUEST INFORMATION</span>
 
       <form onsubmit="event.preventDefault();">
-        <div class="form-grid">
-          
-          <div class="form-group">
-            <label for="firstname">First name <span>*</span></label>
-            <input type="text" id="firstname" placeholder="Enter your name" required>
+        <div class="row g-3 mt-2">
+
+          <div class="col-md-6">
+            <label class="form-label" for="firstname">First name <span>*</span></label>
+            <input class="form-control" type="text" id="firstname" placeholder="Enter your name" required>
           </div>
 
-          <div class="form-group">
-            <label for="lastname">Last name <span>*</span></label>
-            <input type="text" id="lastname" placeholder="Enter your name" required>
+          <div class="col-md-6">
+            <label class="form-label" for="lastname">Last name <span>*</span></label>
+            <input class="form-control" type="text" id="lastname" placeholder="Enter your name" required>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email <span>*</span></label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+          <div class="col-md-6">
+            <label class="form-label" for="email">Email <span>*</span></label>
+            <input class="form-control" type="email" id="email" placeholder="Enter your email" required>
           </div>
 
-          <div class="form-group">
-            <label for="phone">Phone <span>*</span></label>
-            <input type="tel" id="phone" placeholder="Enter your num..." required>
+          <div class="col-md-6">
+            <label class="form-label" for="phone">Phone <span>*</span></label>
+            <input class="form-control" type="tel" id="phone" placeholder="Enter your number" required>
           </div>
 
-          <div class="form-group">
-            <label for="organization">Organization name <span>*</span></label>
-            <input type="text" id="organization" placeholder="Enter company name" required>
+          <div class="col-md-6">
+            <label class="form-label" for="organization">Organization name <span>*</span></label>
+            <input class="form-control" type="text" id="organization" placeholder="Enter company name" required>
           </div>
 
-          <div class="form-group">
-            <label for="role">Job role <span>*</span></label>
-            <input type="text" id="role" placeholder="Type role..." required>
+          <div class="col-md-6">
+            <label class="form-label" for="role">Job role <span>*</span></label>
+            <input class="form-control" type="text" id="role" placeholder="Type role..." required>
           </div>
 
-          <div class="form-group">
-            <label for="address">Company address <span>*</span></label>
-            <input type="text" id="address" placeholder="Enter company name" required>
+          <div class="col-md-6">
+            <label class="form-label" for="address">Company address <span>*</span></label>
+            <input class="form-control" type="text" id="address" placeholder="Enter company address" required>
           </div>
 
-          <div class="form-group">
-            <label for="state">State of location <span>*</span></label>
-            <select id="state" required>
-              <option value="" disabled selected>Select verification type</option>
+          <div class="col-md-6">
+            <label class="form-label" for="state">State of location <span>*</span></label>
+            <select class="form-select" id="state" required>
+              <option value="" disabled selected>Select state</option>
               <option value="lagos">Lagos</option>
               <option value="abuja">Abuja</option>
               <option value="rivers">Rivers</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="verification">Types of verification</label>
-            <select id="verification">
+          <div class="col-md-6">
+            <label class="form-label" for="verification">Types of verification</label>
+            <select class="form-select" id="verification">
               <option value="" disabled selected>Select verification type</option>
               <option value="academic">Academic Verification</option>
               <option value="guarantor">Guarantor Check</option>
@@ -135,61 +136,64 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="lga">LGA of location <span>*</span></label>
-            <select id="lga" required>
-              <option value="" disabled selected>Select verification type</option>
+          <div class="col-md-6">
+            <label class="form-label" for="lga">LGA of location <span>*</span></label>
+            <select class="form-select" id="lga" required>
+              <option value="" disabled selected>Select LGA</option>
               <option value="ikeja">Ikeja</option>
               <option value="eti-osa">Eti-Osa</option>
               <option value="port-harcourt">Port Harcourt</option>
             </select>
           </div>
 
-          <div class="upload-container">
-            <label>Upload document</label>
+          <div class="col-md-6">
+            <label class="form-label">Upload document</label>
             <div class="upload-box">
               <div class="upload-icon"><i class="bi bi-inbox-fill"></i></div>
-              <p>Drag and drop files here  <small>(PDF, PNG, JPG)</small></p>
+              <p>Drag and drop files here <small>(PDF, PNG, JPG)</small></p>
               <p>- OR -</p>
               <button type="button" class="btn-sm-orange">Browse Files</button>
             </div>
           </div>
 
-          <div class="file-list-container">
-            <label>Uploaded files</label>
+          <div class="col-md-6">
+            <label class="form-label">Uploaded files</label>
 
             <div class="file-item">
               <div class="file-info"><i class="bi bi-file-earmark-text"></i> Resume.pdf (70%)</div>
-              <div class="progress-bar"><div class="progress-fill"></div></div>
+              <div class="progress"><div class="progress-bar bg-info" style="width:70%"></div></div>
             </div>
 
             <div class="file-item">
               <div class="file-info"><i class="bi bi-file-earmark-text"></i> Docs.pdf (12%)</div>
-              <div class="progress-bar"><div class="progress-fill orange"></div></div>
+              <div class="progress"><div class="progress-bar" style="width:12%;background:var(--orange)"></div></div>
             </div>
 
             <div class="file-item">
               <div class="file-info"><i class="bi bi-file-earmark-text"></i> Price.pdf (10%)</div>
-              <div class="progress-bar"><div class="progress-fill green"></div></div>
+              <div class="progress"><div class="progress-bar bg-success" style="width:10%"></div></div>
             </div>
 
             <div class="file-item">
               <div class="file-info"><i class="bi bi-file-earmark-text"></i> Result.pdf (10%)</div>
-              <div class="progress-bar"><div class="progress-fill orange"></div></div>
+              <div class="progress"><div class="progress-bar" style="width:10%;background:var(--orange)"></div></div>
             </div>
           </div>
 
-          <div class="checkbox-group">
-            <input type="checkbox" id="terms" required>
-            <label for="terms">I agree to Klinsheet Privacy Policy and Terms of Service.</label>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terms" required>
+              <label class="form-check-label small text-muted" for="terms">I agree to Klinsheet Privacy Policy and Terms of Service.</label>
+            </div>
           </div>
 
-          <div class="submit-btn-row">
+          <div class="col-12 mt-2">
             <button type="submit" class="btn-orange">Request a Background Check</button>
           </div>
 
         </div>
       </form>
+    </div>
     </div>
   </section>
 

@@ -75,8 +75,9 @@
 
   <!-- Contact Form Section -->
   <section class="contact-section">
+    <div class="container">
     <!-- Stretched Contact Info Card -->
-    <div class="contact-info-card">
+    <div class="contact-info-card mb-5">
       <div class="info-item">
         <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
         <div class="info-text">
@@ -107,25 +108,25 @@
     <!-- Contact Form -->
     <div class="contact-form-wrapper">
       <h2>Have Questions? Let's Connect</h2>
-      <p>Reach out to our team for expert guidance, service enquiries to support your verification journey.</p>
+      <p class="text-muted">Reach out to our team for expert guidance, service enquiries to support your verification journey.</p>
 
       <form onsubmit="event.preventDefault();">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="firstname">First name</label>
-            <input type="text" id="firstname" placeholder="Enter your name">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="firstname">First name</label>
+            <input class="form-control contact-input" type="text" id="firstname" placeholder="Enter your name">
           </div>
-          <div class="form-group">
-            <label for="lastname">Last name</label>
-            <input type="text" id="lastname" placeholder="Enter your name">
+          <div class="col-md-6">
+            <label class="form-label" for="lastname">Last name</label>
+            <input class="form-control contact-input" type="text" id="lastname" placeholder="Enter your name">
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email">
+          <div class="col-md-6">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control contact-input" type="email" id="email" placeholder="Enter your email">
           </div>
-          <div class="form-group">
-            <label for="verification-type">Types of verification</label>
-            <select id="verification-type">
+          <div class="col-md-6">
+            <label class="form-label" for="verification-type">Types of verification</label>
+            <select class="form-select contact-input" id="verification-type">
               <option value="" disabled selected>Select verification type</option>
               <option value="academic">Academic Verification</option>
               <option value="guarantor">Guarantor Check</option>
@@ -133,14 +134,15 @@
               <option value="other">Other</option>
             </select>
           </div>
-          <div class="form-group full-width">
-            <label for="note">Additional note</label>
-            <textarea id="note" placeholder="Type a message"></textarea>
+          <div class="col-12">
+            <label class="form-label" for="note">Additional note</label>
+            <textarea class="form-control contact-input" id="note" placeholder="Type a message"></textarea>
           </div>
         </div>
 
-        <button type="submit" class="btn-orange">Request Academic Verification</button>
+        <button type="submit" class="btn-orange mt-3">Request Academic Verification</button>
       </form>
+    </div>
     </div>
   </section>
 
